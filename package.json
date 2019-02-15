@@ -1,0 +1,36 @@
+{
+  "name": "uijettos",
+  "version": "1.0.0-alpha",
+  "description": "Stateful and stateless, style-able React user interface widgets for websites and web apps",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --presets=@babel/preset-react --out-dir ./modules/ ./src/",
+    "prestart": "npm run build",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beyondthesketch/uijettos.git"
+  },
+  "author": "Nazeer Ruhomutally <nazeer@beyondthesketch.com> (https://www.beyondthesketch.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beyondthesketch/uijettos/issues"
+  },
+  "homepage": "https://github.com/beyondthesketch/uijettos#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
