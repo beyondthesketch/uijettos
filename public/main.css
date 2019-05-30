@@ -1,0 +1,23 @@
+.uijettos-options-button {
+  position: relative; }
+  .uijettos-options-button__options-list {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background: inherit;
+    left: 0;
+    top: 100%;
+    background: #FFF;
+    width: 100%;
+    border: 1px solid #999;
+    box-sizing: inherit;
+    overflow: hidden; }
+  .uijettos-options-button__option {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block; }
+

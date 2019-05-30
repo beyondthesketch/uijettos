@@ -7,6 +7,8 @@ import {
     UijettosOptionsButton
 } from './index';
 
+import './src/styles/_options-button-defaults.scss';
+
 ReactDOM.render(
     <UijettosToggleButton
         labelOn="Switched ON"

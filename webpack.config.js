@@ -1,5 +1,7 @@
 const path = require('path');
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
     mode: 'development',
     entry: './demo.js',
@@ -12,6 +14,13 @@ module.exports = {
         compress: true,
         port: 9000
     },
+    plugins: [
+        new MiniCssExtractPlugin(
+            {
+                filename: '[name].css'
+            }
+        )
+    ],
     module: {
         rules: [
             {
@@ -23,7 +32,20 @@ module.exports = {
                 options: {
                     presets: ['@babel/preset-react']
                 }
-            }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../'
+                        }
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
         ]
     }
 };

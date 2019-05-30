@@ -50,7 +50,7 @@ export const UijettosStatelessOptionsButton = React.forwardRef((
                         && Array.from(options).map(
                             ([label, whenClicked], i) => (
                                 <span
-                                    key={i}
+                                    key={label}
                                     className={`${cssRootClass}__option`}
                                     onClick={
                                         event => {
