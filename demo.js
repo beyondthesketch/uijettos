@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import {
     UijettosToggleButton,
-    UijettosSelectList,
-    UijettosOptionsButton
+    UijettosOptionsButton,
+    UijettosSelectList
 } from './index';
 
 import './src/styles/_options-button-defaults.scss';
@@ -12,9 +12,9 @@ import './src/styles/_options-button-defaults.scss';
 ReactDOM.render(
     <UijettosToggleButton
         labelOn="Switched ON"
-        labelOff="turned OFF"
-        initial={true}
-        whenClicked={(state) => console.log(state)}
+        labelOff="Switched OFF"
+        initialState={ false }
+        whenClicked={(state) => console.log('foobar', state)}
     />,
     document.getElementById('toggle-button')
 );
@@ -35,6 +35,7 @@ ReactDOM.render(
 
 ReactDOM.render(
     <UijettosSelectList
+        initialSelected="baz"
         whenChanged={(val) => console.log(val)}
     >
         <div

@@ -1,3 +1,5 @@
+# *** ALPHA DEVELOPMENT - DO NOT USE IN PRODUCTION ***
+
 # Uijettos
 
 Stateful & stateless, React UI widget components for websites and web apps, styleable with BEM.
