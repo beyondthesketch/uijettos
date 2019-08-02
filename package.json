@@ -4,8 +4,6 @@
   "description": "Stateful and stateless, style-able React user interface widgets for websites and web apps",
   "main": "index.js",
   "scripts": {
-    "build": "babel --presets=@babel/preset-react --out-dir ./modules/ ./src/",
-    "prestart": "npm run build",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,7 +38,6 @@
   "files": [
     "LICENSE",
     "README.md",
-    "modules/",
     "index.js"
   ]
 }
