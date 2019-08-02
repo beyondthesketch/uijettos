@@ -5,8 +5,8 @@ import DEFAULT_CSS_CLASS_PREFIX from './../../constants/default-css-class-prefix
 export default function UijettosToggleButton(
     {
         cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
-        labelOff = 'on',
-        labelOn = 'off',
+        labelOff = 'off',
+        labelOn = 'on',
         initialState = false,
         whenClicked,
     }
