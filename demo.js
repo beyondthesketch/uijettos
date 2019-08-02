@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
@@ -6,8 +6,6 @@ import {
     UijettosOptionsButton,
     UijettosSelectList
 } from './index';
-
-import './src/styles/_options-button-defaults.scss';
 
 ReactDOM.render(
     <UijettosToggleButton
