@@ -8,6 +8,8 @@ import {
 } from './index';
 
 import './src/styles/_toggle-button-defaults.scss';
+import './src/styles/_options-button-defaults.scss';
+import './src/styles/_select-list-defaults.scss';
 
 ReactDOM.render(
     <UijettosToggleButton
