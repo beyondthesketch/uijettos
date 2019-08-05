@@ -41,6 +41,9 @@
   "files": [
     "LICENSE",
     "README.md",
-    "index.js"
+    "index.js",
+    "src/",
+    "styles/",
+    "!styles/.gitkeep"
   ]
 }
