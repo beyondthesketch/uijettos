@@ -37,20 +37,15 @@ export default function UijettosSelectList(
                 {
                     React.Children.map(
                         children,
-                        child => <li>
-                            {
-                                React.cloneElement(child, {
-                                    className: `${cssRootClass}__option` +
-                                    (child.props['data-value'] === selected
-                                        ?
-                                        ` ${cssRootClass}__option--selected`
-                                        :
-                                        ''
-                                    )
-                                })
-                            }
-                        </li>
-                        
+                        child => React.cloneElement(child, {
+                            className: `${cssRootClass}__option` +
+                            (child.props['data-value'] === selected
+                                ?
+                                ` ${cssRootClass}__option--selected`
+                                :
+                                ''
+                            )
+                        })
                     )
                 }
             </ul>
