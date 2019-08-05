@@ -4,6 +4,8 @@
   "description": "Stateful and stateless, style-able React user interface widgets for websites and web apps",
   "main": "index.js",
   "scripts": {
+    "build": "node generate-css-files.node.js",
+    "prepare": "npm run build",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
