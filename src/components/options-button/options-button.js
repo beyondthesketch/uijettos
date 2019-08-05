@@ -29,9 +29,7 @@ export const UijettosStatelessOptionsButton = React.forwardRef((
                             whenOptionsTriggerClicked && whenOptionsTriggerClicked();
                         }
                     }
-                >
-                    *
-                </span>
+                ></span>
                 <span
                     className={`${cssRootClass}__options-list${open ? ' ' + cssRootClass + '__options-list--open' : ''}`}
                     style={

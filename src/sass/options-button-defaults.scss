@@ -5,7 +5,12 @@
         @include baseButtonStyles;
         position: relative;
         &__options-trigger {
-            
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            &::after {
+                content: "•";
+            }
         }
         &__options-list {
             padding: 0;

@@ -7,9 +7,9 @@ import {
     UijettosSelectList
 } from './index';
 
-import './src/styles/toggle-button-defaults.scss';
-import './src/styles/options-button-defaults.scss';
-import './src/styles/select-list-defaults.scss';
+import './src/sass/toggle-button-defaults.scss';
+import './src/sass/options-button-defaults.scss';
+import './src/sass/select-list-defaults.scss';
 
 ReactDOM.render(
     <UijettosToggleButton
