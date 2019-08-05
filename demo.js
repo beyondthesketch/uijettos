@@ -7,6 +7,10 @@ import {
     UijettosSelectList
 } from './index';
 
+import './src/sass/toggle-button-defaults.scss';
+import './src/sass/options-button-defaults.scss';
+import './src/sass/select-list-defaults.scss';
+
 ReactDOM.render(
     <UijettosToggleButton
         labelOn="Switched ON"
@@ -36,19 +40,19 @@ ReactDOM.render(
         initialSelected="baz"
         whenChanged={(val) => console.log(val)}
     >
-        <div
+        <li
             data-value="bar"
         >
             <div><span>bar</span></div>
-        </div>
-        <div
+        </li>
+        <li
             data-value="baz"
         >baz
-        </div>
-        <div
+        </li>
+        <li
             data-value="bat"
         >bat
-        </div>
+        </li>
     </UijettosSelectList>,
     document.getElementById('select-list')
 )

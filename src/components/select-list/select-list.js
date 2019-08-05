@@ -46,7 +46,6 @@ export default function UijettosSelectList(
                                 ''
                             )
                         })
-                        
                     )
                 }
             </ul>

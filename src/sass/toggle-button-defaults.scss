@@ -1,13 +1,15 @@
+@import './mixins';
+
 .uijettos {
     &-toggle-button {
-
+        @include baseButtonStyles;
         &--on {
 
         }
         &__label {
 
             &--on {
-                
+                color: darkgreen;
             }
         }
     }
