@@ -1,0 +1,59 @@
+.uijettos {
+    &-toggle-button {
+        position: relative;
+        display: inline-block;
+        border-radius: 8px;
+        box-sizing: border-box;
+        border: 1px solid rgba(158, 158, 158, 0.2);
+        color: #FFF;
+        padding: 2rem;
+        background: linear-gradient(#444, #333);
+        box-shadow: 
+            0 0 2px 0 rgba(0, 0, 0, 0.4),
+            0 0 0 2px #000,
+            1px -1px 2px 4px rgba(0, 0, 0, 0.1);
+        &:active {
+            background: linear-gradient(#414141, #303030);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            box-shadow:
+                0 0 2px 0 rgba(0, 0, 0, 0.4),
+                0 0 0 3px #000,
+                0 0 0 0 rgba(0, 0, 0, 0.1);
+            padding: calc(2rem - 1px);
+            transform: translate(1px, 1px);
+            > .uijettos-toggle-button__label {
+                transform: scale(0.97, 0.97);
+            }
+            
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            top: 10%;
+            left: 20%;
+            background: linear-gradient(rgb(175, 175, 175), #ECECEC);
+        }
+        &--on {
+            box-shadow:
+                -10px -8px 5px -10px rgba(0, 255, 0, 0.5),
+                0 0 2px 0 rgba(0, 0, 0, 0.4),
+                0 0 0 2px #000,
+                1px -1px 2px 4px rgba(0, 0, 0, 0.1);
+            &::after {
+                background: linear-gradient(20deg, rgb(145, 255, 118), rgb(94, 189, 75));
+                box-shadow: 0 0 3px 0 rgba(0, 255, 0, 0.5);
+            }
+
+        }
+        &__label {
+            display: block;
+            font-size: 20px;
+            
+        }
+        
+    }
+}
