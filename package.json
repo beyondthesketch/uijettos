@@ -1,6 +1,6 @@
 {
   "name": "@beyondthesketch/uijettos",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Stateful and stateless, style-able React user interface widgets for websites and web apps",
   "main": "index.js",
   "scripts": {

@@ -44,7 +44,12 @@ export default function UijettosSelectList(
                                 ` ${cssRootClass}__option--selected`
                                 :
                                 ''
-                            )
+                            ),
+                            tabIndex: 0,
+                            onKeyPress: (event) => {
+                                event.preventDefault();
+                                event.target.click();
+                            }
                         })
                     )
                 }

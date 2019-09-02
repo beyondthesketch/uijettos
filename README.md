@@ -194,15 +194,17 @@ __Modifiers__
 
 __Block__
 
-`uijettos-options-button` - The main `button` element (i.e. the root element of the component)
+`uijettos-options-button` - The main `div` element (i.e. the root element of the component)
 
 __Elements__
 
-`uijettos-options-button__options-trigger` - `span` element used as a trigger to open the list of other options.
+`uijettos-options-button__main-button` - `button` element of the main action button.
 
-`uijettos-options-button__options-list` - `span` element used as a 'wrapper' for all the options.
+`uijettos-options-button__options-trigger` - `button` element used as a trigger to open the list of other options.
 
-`uijettos-options-button__option` - `span` element used for each options.
+`uijettos-options-button__options-list` - `div` element used as a 'wrapper' for all the options.
+
+`uijettos-options-button__option` - `button` element used for each option.
 
 __Modifiers__
 
