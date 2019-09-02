@@ -2,82 +2,35 @@ import React from 'react';
 
 import  DEFAULT_CSS_CLASS_PREFIX from './../../constants/default-css-class-prefix';
 
-export const UijettosStatelessOptionsButton = React.forwardRef((
-    {
-        open,
-        cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
-        whenClicked,
-        whenOptionsTriggerClicked,
-        label,
-        options,
-    },
-    ref
-) => {
-        const cssRootClass = `${cssClassPrefix}-options-button`;
-        return (
-            <button
-                ref={ref}
-                className={cssRootClass}
-                onClick={whenClicked}
-            >
-                {label}
-                <span
-                    className={`${cssRootClass}__options-trigger`}
-                    onClick={
-                        event => {
-                            event.stopPropagation();
-                            whenOptionsTriggerClicked && whenOptionsTriggerClicked();
-                        }
-                    }
-                ></span>
-                <span
-                    className={`${cssRootClass}__options-list${open ? ' ' + cssRootClass + '__options-list--open' : ''}`}
-                    style={
-                        !open 
-                            ?
-                            {
-                                display: 'none'
-                            }
-                            :
-                            null
-                    }
-                >
-                    {
-                        !!options
-                        && options.size > 0
-                        && Array.from(options).map(
-                            ([label, whenClicked], i) => (
-                                <span
-                                    key={label}
-                                    className={`${cssRootClass}__option`}
-                                    onClick={
-                                        event => {
-                                            event.stopPropagation();
-                                            whenClicked();
-                                            whenOptionsTriggerClicked();
-                                        }
-                                    }
-                                >
-                                    {label}
-                                </span>
-                            )
-                        )
-                    }
-                </span>
-            </button>
-        );
-});
-
 export default class UijettosOptionsButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: false
+            open: this.props.open || false
         };
         this.buttonRef = React.createRef();
+        this.timeoutId = null;
 
         this.handleOptionsListTriggerClick = this.handleOptionsListTriggerClick.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
+    }
+
+    handleBlur() {
+        this.state.open && (this.timeoutId = setTimeout(
+            () => {
+                this.setState(
+                    {
+                        open: false
+                    }
+                )
+            }
+        )) && window.removeEventListener('click', this.handleOutsideClick, false);
+    }
+
+    handleFocus() {
+        this.timeoutId && clearTimeout(this.timeoutId);
     }
 
     handleOutsideClick(event) {
@@ -113,14 +66,66 @@ export default class UijettosOptionsButton extends React.Component {
     }
 
     render() {
-        return <UijettosStatelessOptionsButton
-                ref={this.buttonRef}  
-                cssClassPrefix={this.props.cssClassPrefix}
-                label={this.props.label}
-                open={this.state.open}
-                whenClicked={this.props.whenClicked}
-                whenOptionsTriggerClicked={this.handleOptionsListTriggerClick}
-                options={this.props.options}
-            />;
+        const {
+            cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
+            whenClicked,
+            whenOptionsTriggerClicked,
+            label,
+            options,
+        } = this.props;
+        const cssRootClass = `${cssClassPrefix}-options-button`;
+
+        return (
+            <div
+                className={cssRootClass}
+                onBlur={this.handleBlur}
+                onFocus={this.handleFocus}
+            >
+                <button
+                    className={`${cssRootClass}__main-button`}
+                    onClick={whenClicked}
+                >
+                    {label}
+                </button>
+                <button
+                    className={`${cssRootClass}__options-trigger`}
+                    onClick={
+                        event => {
+                            event.stopPropagation();
+                            this.handleOptionsListTriggerClick();
+                            whenOptionsTriggerClicked && whenOptionsTriggerClicked();
+                        }
+                    }
+                ></button>
+                {
+                    this.state.open && (<div
+                        className={`${cssRootClass}__options-list${this.state.open ? ' ' + cssRootClass + '__options-list--open' : ''}`}
+                    >
+                        {
+                            !!options
+                            && options.size > 0
+                            && Array.from(options).map(
+                                ([label, whenClicked], i) => (
+                                    <button
+                                        key={label}
+                                        className={`${cssRootClass}__option`}
+                                        onClick={
+                                            event => {
+                                                event.stopPropagation();
+                                                whenClicked && whenClicked();
+                                                whenOptionsTriggerClicked && whenOptionsTriggerClicked();
+                                                this.handleOptionsListTriggerClick();
+                                            }
+                                        }
+                                    >
+                                        {label}
+                                    </button>
+                                )
+                            )
+                        }
+                    </div>)
+                }
+            </div>
+        );
     }
 }
