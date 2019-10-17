@@ -51,6 +51,7 @@
             box-sizing: inherit;
             overflow: hidden;
             box-shadow: 0 0.2rem 0.5rem -0.3rem rgba(0,0,0,0.2);
+            z-index: 2;
         }
         &__option {
                 -webkit-appearance: none;
