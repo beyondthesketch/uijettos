@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UijettosSelectList component Renders correctly when not supplied any props 1`] = `
+<div
+  className="uijettos-select-list"
+>
+  <ul
+    className="uijettos-select-list__options-list"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`UijettosSelectList component Renders correctly when supplied a cssClassPrefix 1`] = `
+<div
+  className="doodads-select-list"
+>
+  <ul
+    className="doodads-select-list__options-list"
+    data-selected="foo"
+    onClick={[Function]}
+  >
+    <li
+      className="doodads-select-list__option doodads-select-list__option--selected"
+      data-value="foo"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Foo
+    </li>
+    <li
+      className="doodads-select-list__option"
+      data-value="bar"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Bar
+    </li>
+    <li
+      className="doodads-select-list__option"
+      data-value="baz"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Baz
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`UijettosSelectList component Renders correctly when supplied child <li>s 1`] = `
+<div
+  className="uijettos-select-list"
+>
+  <ul
+    className="uijettos-select-list__options-list"
+    data-selected="foo"
+    onClick={[Function]}
+  >
+    <li
+      className="uijettos-select-list__option uijettos-select-list__option--selected"
+      data-value="foo"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Foo
+    </li>
+    <li
+      className="uijettos-select-list__option"
+      data-value="bar"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Bar
+    </li>
+    <li
+      className="uijettos-select-list__option"
+      data-value="baz"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Baz
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`UijettosSelectList component Renders correctly when supplied child <li>s and an initial selected 1`] = `
+<div
+  className="uijettos-select-list"
+>
+  <ul
+    className="uijettos-select-list__options-list"
+    data-selected="bar"
+    onClick={[Function]}
+  >
+    <li
+      className="uijettos-select-list__option"
+      data-value="foo"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Foo
+    </li>
+    <li
+      className="uijettos-select-list__option uijettos-select-list__option--selected"
+      data-value="bar"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Bar
+    </li>
+    <li
+      className="uijettos-select-list__option"
+      data-value="baz"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Baz
+    </li>
+  </ul>
+</div>
+`;

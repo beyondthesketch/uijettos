@@ -2,6 +2,8 @@ import React from 'react';
 
 import  DEFAULT_CSS_CLASS_PREFIX from './../../constants/default-css-class-prefix';
 
+// NOTE: The `handleOutsideClick` implementation is necessary to handle Safari correctly (tested on v12)
+
 export default class UijettosOptionsButton extends React.Component {
     constructor(props) {
         super(props);
