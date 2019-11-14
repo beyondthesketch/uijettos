@@ -44,6 +44,7 @@
     "LICENSE",
     "README.md",
     "index.js",
+    "uijettos.d.ts",
     "src/",
     "styles/",
     "!styles/.gitkeep"
