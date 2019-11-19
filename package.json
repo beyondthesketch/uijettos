@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "uijettos.d.ts",
   "scripts": {
-    "build": "node generate-css-files.node.js",
+    "build": "npm test && node generate-css-files.node.js",
     "prepare": "npm run build",
     "start": "webpack-dev-server",
     "storybook": "start-storybook",
