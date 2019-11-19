@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UijettosOptionsButton component Renders correctly when not supplied any props 1`] = `
+<div
+  className="uijettos-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="uijettos-options-button__main-button"
+  />
+  <button
+    className="uijettos-options-button__options-trigger"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`UijettosOptionsButton component Renders correctly when supplied a css prefix 1`] = `
+<div
+  className="doodads-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="doodads-options-button__main-button"
+  />
+  <button
+    className="doodads-options-button__options-trigger"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`UijettosOptionsButton component Renders correctly when supplied a css prefix 2`] = `
+<div
+  className="doodads-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="doodads-options-button__main-button"
+  />
+  <button
+    className="doodads-options-button__options-trigger"
+    onClick={[Function]}
+  />
+  <div
+    className="doodads-options-button__options-list doodads-options-button__options-list--open"
+  >
+    <button
+      className="doodads-options-button__option"
+      onClick={[Function]}
+    >
+      widgets
+    </button>
+    <button
+      className="doodads-options-button__option"
+      onClick={[Function]}
+    >
+      doodads
+    </button>
+  </div>
+</div>
+`;
+
+exports[`UijettosOptionsButton component Renders correctly when supplied with a label 1`] = `
+<div
+  className="uijettos-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="uijettos-options-button__main-button"
+  >
+    Foo Bar
+  </button>
+  <button
+    className="uijettos-options-button__options-trigger"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`UijettosOptionsButton component Renders correctly when supplied with options 1`] = `
+<div
+  className="uijettos-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="uijettos-options-button__main-button"
+  />
+  <button
+    className="uijettos-options-button__options-trigger"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`UijettosOptionsButton component Renders correctly when supplied with options 2`] = `
+<div
+  className="uijettos-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="uijettos-options-button__main-button"
+  />
+  <button
+    className="uijettos-options-button__options-trigger"
+    onClick={[Function]}
+  />
+  <div
+    className="uijettos-options-button__options-list uijettos-options-button__options-list--open"
+  >
+    <button
+      className="uijettos-options-button__option"
+      onClick={[Function]}
+    >
+      widgets
+    </button>
+    <button
+      className="uijettos-options-button__option"
+      onClick={[Function]}
+    >
+      doodads
+    </button>
+  </div>
+</div>
+`;
+
+exports[`UijettosOptionsButton component Renders options correctly when trigger button is clicked 1`] = `
+<div
+  className="uijettos-options-button"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <button
+    className="uijettos-options-button__main-button"
+  />
+  <button
+    className="uijettos-options-button__options-trigger"
+    onClick={[Function]}
+  />
+  <div
+    className="uijettos-options-button__options-list uijettos-options-button__options-list--open"
+  >
+    <button
+      className="uijettos-options-button__option"
+      onClick={[Function]}
+    >
+      widgets
+    </button>
+    <button
+      className="uijettos-options-button__option"
+      onClick={[Function]}
+    >
+      doodads
+    </button>
+  </div>
+</div>
+`;

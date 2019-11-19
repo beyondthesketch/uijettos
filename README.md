@@ -1,4 +1,4 @@
-# *** ALPHA DEVELOPMENT - DO NOT USE IN PRODUCTION ***
+# *** BETA DEVELOPMENT ***
 
 ## This project is still in early development stages and should not be used for public, production websites or apps
 

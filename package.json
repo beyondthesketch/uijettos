@@ -5,10 +5,11 @@
   "main": "index.js",
   "types": "uijettos.d.ts",
   "scripts": {
-    "build": "node generate-css-files.node.js",
+    "build": "npm test && node generate-css-files.node.js",
     "prepare": "npm run build",
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "storybook": "start-storybook",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,17 +26,24 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.4",
+    "@storybook/addon-cssresources": "^5.2.4",
+    "@storybook/addon-knobs": "^5.2.4",
+    "@storybook/react": "^5.2.4",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
+    "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-test-renderer": "^16.12.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "webpack-dev-server": "^3.1.14"
   },
   "peerDependencies": {
     "react": "^16.8.0",
