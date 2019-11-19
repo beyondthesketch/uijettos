@@ -53,6 +53,10 @@ ReactDOM.render(
             data-value="bat"
         >bat
         </li>
+        <li
+            data-value="qux"
+        >qux
+        </li>
     </UijettosSelectList>,
     document.getElementById('select-list')
 )

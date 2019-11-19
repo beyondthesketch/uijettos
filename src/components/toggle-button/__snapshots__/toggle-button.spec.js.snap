@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UijettosToggleButton component Renders correctly when given a cssClassPrefix and state is false 1`] = `
+<button
+  className="doodads-toggle-button"
+  onClick={[Function]}
+>
+  <span
+    className="doodads-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Renders correctly when given a cssClassPrefix and state is true 1`] = `
+<button
+  className="doodads-toggle-button doodads-toggle-button--on"
+  onClick={[Function]}
+>
+  <span
+    className="doodads-toggle-button__label doodads-toggle-button__label--on"
+  >
+    on
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Renders correctly when given a labelOff 1`] = `
+<button
+  className="uijettos-toggle-button"
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    This is off
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Renders correctly when given a labelOn 1`] = `
+<button
+  className="uijettos-toggle-button uijettos-toggle-button--on"
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label uijettos-toggle-button__label--on"
+  >
+    This is on
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Renders correctly when given initialState of false 1`] = `
+<button
+  className="uijettos-toggle-button"
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Renders correctly when given initialState of true 1`] = `
+<button
+  className="uijettos-toggle-button uijettos-toggle-button--on"
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label uijettos-toggle-button__label--on"
+  >
+    on
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Renders correctly when not supplied any props 1`] = `
+<button
+  className="uijettos-toggle-button"
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
