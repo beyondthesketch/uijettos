@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npm test && node generate-css-files.node.js",
     "prepare": "npm run build",
-    "start": "webpack-dev-server",
+    "start": "npm run storybook",
     "storybook": "start-storybook",
     "test": "jest"
   },

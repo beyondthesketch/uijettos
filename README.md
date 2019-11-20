@@ -40,15 +40,13 @@ npm run build
 npm install
 ```
 
-2. Start the local development environment:
+2. Start the local development storybook:
 
 ```shell
 npm start
 ```
-The local demo page will be served at `localhost:9000` and changes will trigger a reload.
 
-The source JavaScript file for the page is the `demo.js` file in the root. The page served is the `public/index.html` file.
-
+The local storybook page will open automatically and changes will trigger a update/reload.
 
 # Usage
 
@@ -108,7 +106,7 @@ __whenClicked__ : Function > _optional_ - A callback function to fire when the m
 
 __initialSelected__ : string > _optional_, _defaults to the first option_ - The initially/currently selected option - see notes below
 
-__whenChanged__ : string > _optional_ - A callback to fire when an option is selected. The callback accepts one argument that contains the value of the selected option.
+__whenChanged__ : Function > _optional_ - A callback to fire when an option is selected. The callback accepts one argument that contains the value of the selected option.
 
 __important usage notes__
 
