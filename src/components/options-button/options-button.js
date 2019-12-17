@@ -115,7 +115,6 @@ export default class UijettosOptionsButton extends React.Component {
                                             event => {
                                                 event.stopPropagation();
                                                 whenClicked && whenClicked();
-                                                whenOptionsTriggerClicked && whenOptionsTriggerClicked();
                                                 this.handleOptionsListTriggerClick();
                                             }
                                         }
