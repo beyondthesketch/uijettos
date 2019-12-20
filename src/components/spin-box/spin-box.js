@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-
 import DEFAULT_CSS_CLASS_PREFIX from './../../constants/default-css-class-prefix';
+
+const INPUT_NUMBER_TYPE = (function() {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'number');
+    return input.type === 'number'
+        ? true
+        : false;
+}());
 
 export default function UijettosSpinBox(
     {
@@ -13,22 +20,62 @@ export default function UijettosSpinBox(
         whenChanged
     }
 ) {
-    const [value, setValue] = useState( initialValue);
+    const KEYS = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '0',
+        'Backspace',
+        'ArrowUp',
+        'ArrowDown',
+        'ArrowLeft',
+        'ArrowRight',
+    ];
+    const [value, setValue] = useState( initialValue );
     const cssRootClass = `${cssClassPrefix}-spin-box`;
+    const reachedMax = !!((max !== undefined) && ((value + 1) > max));
+    const reachedMin = !!((min !== undefined) && ((value - 1) < min));
 
     const increment = () => {
-        if ((max !== undefined) && ((value + 1) > max)) {
+        if (reachedMax) {
             return null;
         }
-        setValue(value + 1);
-    }
+        const val = value + 1;
+        (whenChanged && whenChanged(val));
+        whenIncreased && whenIncreased(val);
+        return setValue(val);
+    };
     const decrement = () => {
-        console.log('min', min, value);
-        if ((min !== undefined) && ((value - 1) < min)) {
+        if (reachedMin) {
             return null;
         }
-        setValue(value - 1);
-    }
+        const val = value - 1;
+        (whenChanged && whenChanged(val));
+        whenDecreased && whenDecreased(val);
+        return setValue(val);
+    };
+    const inputChange = (event) => {
+        let val = parseInt(event.target.value, 10);
+
+        // TODO: Rethink UX around entering numbers directly that are no in min/max range
+        if (min && (val < min)) {
+            val = min;
+        }
+        if (max && (val > max)) {
+            val = max;
+        }
+
+        return (
+            setValue(val),
+            (!isNaN(val) && whenChanged) && whenChanged(val)
+        );
+    };
 
     return (
         <div
@@ -36,29 +83,46 @@ export default function UijettosSpinBox(
         >
             <input
                 className={ `${cssRootClass}__input` }
-                value={ value }
+                value={ `${value}` }
                 type="number"
                 min={ min }
                 max={ max }
-                onChange={ (event) => {
-                    console.log('val', event.target.value);
-                    // whenChanged && whenChanged(value);
-                    return setValue( parseInt(event.target.value, 10) );
-                } }
+                onKeyDown={
+                    (event) => {
+                        if (!KEYS.includes(event.key)) {
+                            event.preventDefault();
+                            return;
+                        }
+                        if (!INPUT_NUMBER_TYPE) {
+                            if (event.key === 'ArrowUp') {
+                                event.preventDefault();
+                                increment();
+                            }
+                            if (event.key === 'ArrowDown') {
+                                event.preventDefault();
+                                decrement();
+                            }
+                        }
+                    }
+                }
+                onChange={ inputChange }
+                onBlur={
+                    (event) => {
+                        if (event.target.value === '') {
+                            const val = min || 0;
+                            setValue(val);
+                            whenChanged && whenChanged(val);
+                        }
+                    }
+                }
             />
             <span
-                className={ `${cssRootClass}__button ${cssRootClass}__button--decrease`}
-                onClick={ () => {
-                    decrement();
-                    whenDecreased && whenDecreased(value);
-                } }
+                className={ `${cssRootClass}__button ${cssRootClass}__button--decrease${ reachedMin ? (' ' + cssRootClass + '__button--disabled') : '' }`}
+                onClick={ decrement }
             >Decrease</span>
             <span
-                className={ `${cssRootClass}__button ${cssRootClass}__button--increase`}
-                onClick={ () => {
-                    increment();
-                    whenIncreased && whenIncreased(value);
-                } }
+                className={ `${cssRootClass}__button ${cssRootClass}__button--increase${ reachedMax ? (' ' + cssRootClass + '__button--disabled') : '' }`}
+                onClick={ increment }
             >Increase</span>
         </div>
     );

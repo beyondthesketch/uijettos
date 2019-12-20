@@ -28,8 +28,8 @@ stories
         () => {
             const prefix = text('cssClassPrefix', 'uijettos');
             const initialValue = number('initialValue', 3);
-            const min = number('min', 0);
-            const max = number('max', 100);
+            const min = number('min', 2);
+            const max = number('max', 30);
 
             return (
                 <UijettosSpinBox
@@ -38,6 +38,8 @@ stories
                     min={ min }
                     max={ max }
                     whenChanged={ action('changed') }
+                    whenDecreased={ action('decreased') }
+                    whenIncreased={ action('increased') }
                 />
             );
         }
