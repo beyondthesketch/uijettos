@@ -39,8 +39,8 @@ export default function UijettosSpinBox(
     ];
     const [value, setValue] = useState( initialValue );
     const cssRootClass = `${cssClassPrefix}-spin-box`;
-    const reachedMax = !!((max !== undefined) && ((value + 1) > max));
-    const reachedMin = !!((min !== undefined) && ((value - 1) < min));
+    const reachedMax = !!(max && (max !== undefined) && ((value + 1) > max));
+    const reachedMin = !!(min && (min !== undefined) && ((value - 1) < min));
 
     const increment = () => {
         if (reachedMax) {
