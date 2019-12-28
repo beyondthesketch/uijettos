@@ -14,6 +14,7 @@ export default function UijettosSpinBox(
         initialValue = 0,
         min = undefined,
         max = undefined,
+        allowEmpty = false,
         cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
         whenIncreased,
         whenDecreased,
@@ -61,7 +62,7 @@ export default function UijettosSpinBox(
         return setValue(val);
     };
     const inputChange = (event) => {
-        let val = parseInt(event.target.value, 10);
+        let val = parseInt(event.target.value, 10) || undefined;
 
         // TODO: Rethink UX around entering numbers directly that are no in min/max range
         if (min && (val < min)) {
@@ -73,7 +74,7 @@ export default function UijettosSpinBox(
 
         return (
             setValue(val),
-            (!isNaN(val) && whenChanged) && whenChanged(val)
+            ((allowEmpty && whenChanged) || (val && whenChanged)) && whenChanged(val)
         );
     };
 
