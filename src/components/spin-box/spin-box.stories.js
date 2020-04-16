@@ -29,7 +29,7 @@ stories
             const prefix = text('cssClassPrefix', 'uijettos');
             const initialValue = number('initialValue', 3);
             const min = number('min', 2);
-            const max = number('max', 30);
+            const max = number('max', 5);
             const allowEmpty = boolean('allowEmpty', false);
 
             return (
