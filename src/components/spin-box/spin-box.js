@@ -14,6 +14,7 @@ export default function UijettosSpinBox(
         initialValue = 0,
         min = undefined,
         max = undefined,
+        step = 1,
         allowEmpty = false,
         autoWidth = false,
         cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
@@ -45,14 +46,14 @@ export default function UijettosSpinBox(
     const newValue = parseFloat(value);
     const reachedMax = !!max && ((newValue + 0.1) > max);
     const reachedMin = !!min && ((newValue - 0.1) < min);
-    // console.log(newValue, newValue - 0.1, newValue);
 
     const increment = (event) => {
         if (reachedMax) {
             return null;
         }
         const shift = event.shiftKey;
-        const val = (newValue * 10 + (shift ? 0.1 : 1) * 10) / 10;
+        const newVal = (newValue * 10 + (shift ? 0.1 : step) * 10) / 10;
+        const val = newVal > max ? max : newVal;
         (whenChanged && whenChanged(val));
         whenIncreased && whenIncreased(val);
         return setValue(val.toString());
@@ -62,7 +63,8 @@ export default function UijettosSpinBox(
             return null;
         }
         const shift = event.shiftKey;
-        const val = (newValue * 10 - (shift ? 0.1 : 1) * 10) / 10;
+        const newVal = (newValue * 10 - (shift ? 0.1 : step) * 10) / 10;
+        const val = newVal < min ? min : newVal;
         (whenChanged && whenChanged(val));
         whenDecreased && whenDecreased(val);
         return setValue(val.toString());
@@ -116,6 +118,7 @@ export default function UijettosSpinBox(
                 }
                 value={ `${value}` }
                 type="number"
+                step={ step }
                 min={ min }
                 max={ max }
                 onKeyDown={
