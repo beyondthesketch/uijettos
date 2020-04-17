@@ -43,9 +43,9 @@ export default function UijettosSpinBox(
     const [value, setValue] = useState( initialValue );
     const cssRootClass = `${cssClassPrefix}-spin-box`;
     const newValue = parseFloat(value);
-    const reachedMax = !!(max && (max !== undefined) && (((newValue + 0.1) > max)) || ((newValue + 1) > max));
-    const reachedMin = !!(min && (min !== undefined) && (((newValue - 0.1) < min)) || ((newValue - 1) < min));
-    console.log(newValue, newValue - 0.1, newValue);
+    const reachedMax = !!max && ((newValue + 0.1) > max);
+    const reachedMin = !!min && ((newValue - 0.1) < min);
+    // console.log(newValue, newValue - 0.1, newValue);
 
     const increment = (event) => {
         if (reachedMax) {
