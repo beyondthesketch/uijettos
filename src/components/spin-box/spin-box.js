@@ -11,7 +11,7 @@ const INPUT_NUMBER_TYPE = (function() {
 
 export default function UijettosSpinBox(
     {
-        initialValue = 0,
+        initialValue = '0',
         min = undefined,
         max = undefined,
         step = 1,
