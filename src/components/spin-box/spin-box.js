@@ -53,7 +53,7 @@ export default function UijettosSpinBox(
         }
         const shift = event.shiftKey;
         const newVal = (newValue * 10 + (shift ? 0.1 : step) * 10) / 10;
-        const val = newVal > max ? max : newVal;
+        const val =  max && newVal > max ? max : newVal;
         (whenChanged && whenChanged(val));
         whenIncreased && whenIncreased(val);
         return setValue(val.toString());
@@ -64,7 +64,7 @@ export default function UijettosSpinBox(
         }
         const shift = event.shiftKey;
         const newVal = (newValue * 10 - (shift ? 0.1 : step) * 10) / 10;
-        const val = newVal < min ? min : newVal;
+        const val = min && newVal < min ? min : newVal;
         (whenChanged && whenChanged(val));
         whenDecreased && whenDecreased(val);
         return setValue(val.toString());
@@ -97,9 +97,7 @@ export default function UijettosSpinBox(
             ((allowEmpty && whenChanged) || (val && whenChanged)) && whenChanged(val)
         );
     };
-    const calculateMinWidthOfInput = () => value.length;
-
-    console.log(typeof value);
+    const calculateMinWidthOfInput = () => value.length + 1;
 
     return (
         <div
@@ -108,10 +106,11 @@ export default function UijettosSpinBox(
             <input
                 className={ `${cssRootClass}__input` }
                 style={
-                    !max && autoWidth
+                    autoWidth
                     ?
                     ({
-                        width: `${calculateMinWidthOfInput()}ch`
+                        width: `${calculateMinWidthOfInput()}ch`,
+                        minWidth: `${calculateMinWidthOfInput()}ch`
                     })
                     :
                     null
