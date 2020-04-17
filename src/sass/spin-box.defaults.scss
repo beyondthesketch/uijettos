@@ -49,6 +49,7 @@
             font-size: 0;
             z-index: 2;
             cursor: pointer;
+            user-select: none;
 
             transition: transform 250ms ease-out, -webkit-filter 500ms ease-out, filter 500ms ease-out, opacity 500ms ease-out;
             &--decrease {
