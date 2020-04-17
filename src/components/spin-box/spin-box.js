@@ -15,6 +15,7 @@ export default function UijettosSpinBox(
         min = undefined,
         max = undefined,
         allowEmpty = false,
+        autoWidth = false,
         cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
         whenIncreased,
         whenDecreased,
@@ -94,6 +95,7 @@ export default function UijettosSpinBox(
             ((allowEmpty && whenChanged) || (val && whenChanged)) && whenChanged(val)
         );
     };
+    const calculateMinWidthOfInput = () => value.length;
 
     console.log(typeof value);
 
@@ -103,6 +105,15 @@ export default function UijettosSpinBox(
         >
             <input
                 className={ `${cssRootClass}__input` }
+                style={
+                    !max && autoWidth
+                    ?
+                    ({
+                        width: `${calculateMinWidthOfInput()}ch`
+                    })
+                    :
+                    null
+                }
                 value={ `${value}` }
                 type="number"
                 min={ min }
