@@ -35,8 +35,8 @@ stories
     .add(
         'with props',
         () => {
-            const labelOn = text('labelOn', 'Switched On');
-            const labelOff = text('labelOff', 'Switched Off');
+            const labelOn = text('labelOn', 'On');
+            const labelOff = text('labelOff', 'Off');
             const cssClassPrefix = text('cssClassPrefix', 'uijettos');
             const initialState = boolean('initialState', false);
 

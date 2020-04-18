@@ -5,17 +5,19 @@
     &-toggle-button {
         // layout
         position: relative;
+        box-sizing: border-box;
         width: 3.4rem;
         height: 2.1rem;
         border: none;
-        padding: 0;
+        padding: .4rem;
         margin: .8rem 0 2.1rem;
+        text-align: right;
 
         // content
         cursor: pointer;
         border-radius: 1.7rem;
         background-color: #CDCDCD;
-        transition: background 250ms ease;
+        transition: background 250ms ease, text-align 250ms ease;
 
         &::before {
             // layout
@@ -35,13 +37,20 @@
         }
 
         &__label {
-            font-size: 0;
+            // layout
+            font-size: .5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            // content
+            color: #FFF;
         }
 
         // mods
         &.uijettos-toggle-button--on {
             // content
             background-color: lighten($uijettosGreenDark, 5%);
+            text-align: left;
 
             &::before {
                 // layout
