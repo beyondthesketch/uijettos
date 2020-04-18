@@ -1,15 +1,54 @@
 @import './mixins';
+@import './variables';
 
 .uijettos {
     &-toggle-button {
-        @include baseButtonStyles;
-        &--on {
+        // layout
+        position: relative;
+        width: 3.4rem;
+        height: 2.1rem;
+        border: none;
+        padding: 0;
+        margin: .8rem 0 2.1rem;
 
+        // content
+        cursor: pointer;
+        border-radius: 1.7rem;
+        background-color: #CDCDCD;
+        transition: background 250ms ease;
+
+        &::before {
+            // layout
+            content: '';
+            position: absolute;
+            display: block;
+            width: 2.1rem - .4rem;
+            height: 2.1rem - .4rem;
+            left: .2rem;
+            top: .2rem;
+
+            // content
+            background-color: #FFF;
+            border-radius: 100%;
+            transition: left 250ms ease, box-shadow 250ms ease;
+            box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, 0.1);
         }
-        &__label {
 
-            &--on {
-                color: darkgreen;
+        &__label {
+            font-size: 0;
+        }
+
+        // mods
+        &.uijettos-toggle-button--on {
+            // content
+            background-color: lighten($uijettosGreenDark, 5%);
+
+            &::before {
+                // layout
+                left: calc(100% - (2.1rem - .2rem));
+
+                // content
+                box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, 0.2);
             }
         }
     }
