@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UijettosSpinBox component Renders correctly when not supplied any props 1`] = `
+<div
+  className="uijettos-spin-box"
+>
+  <input
+    className="uijettos-spin-box__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={1}
+    style={null}
+    type="number"
+    value="0"
+  />
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--decrease"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
+
+exports[`UijettosSpinBox component Renders correctly when supplied with a cssClassPrefix 1`] = `
+<div
+  className="widget-spin-box"
+>
+  <input
+    className="widget-spin-box__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={1}
+    style={null}
+    type="number"
+    value="27"
+  />
+  <span
+    className="widget-spin-box__button widget-spin-box__button--decrease"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="widget-spin-box__button widget-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
+
+exports[`UijettosSpinBox component Renders correctly when supplied with a max value 1`] = `
+<div
+  className="uijettos-spin-box"
+>
+  <input
+    className="uijettos-spin-box__input"
+    max={27}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={1}
+    style={null}
+    type="number"
+    value="0"
+  />
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--decrease"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
+
+exports[`UijettosSpinBox component Renders correctly when supplied with a min value 1`] = `
+<div
+  className="uijettos-spin-box"
+>
+  <input
+    className="uijettos-spin-box__input"
+    min={27}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={1}
+    style={null}
+    type="number"
+    value="0"
+  />
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--decrease uijettos-spin-box__button--disabled"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
+
+exports[`UijettosSpinBox component Renders correctly when supplied with a step value 1`] = `
+<div
+  className="uijettos-spin-box"
+>
+  <input
+    className="uijettos-spin-box__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={3}
+    style={null}
+    type="number"
+    value="0"
+  />
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--decrease"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
+
+exports[`UijettosSpinBox component Renders correctly when supplied with an initialValue 1`] = `
+<div
+  className="uijettos-spin-box"
+>
+  <input
+    className="uijettos-spin-box__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={1}
+    style={null}
+    type="number"
+    value="27"
+  />
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--decrease"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
+
+exports[`UijettosSpinBox component Renders correctly when supplied with autoWidth as true 1`] = `
+<div
+  className="uijettos-spin-box"
+>
+  <input
+    className="uijettos-spin-box__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    step={1}
+    style={
+      Object {
+        "minWidth": "2ch",
+        "width": "2ch",
+      }
+    }
+    type="number"
+    value="0"
+  />
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--decrease"
+    onClick={[Function]}
+  >
+    Decrease
+  </span>
+  <span
+    className="uijettos-spin-box__button uijettos-spin-box__button--increase"
+    onClick={[Function]}
+  >
+    Increase
+  </span>
+</div>
+`;
