@@ -89,4 +89,17 @@ describe('UijettosToggleButton component', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('Renders correctly and button is disabled when disabled prop is set to true', () => {
+        const tree = renderer
+            .create(
+                <UijettosToggleButton
+                    disabled={ true }
+                />
+            )
+            .toJSON();
+
+
+        expect(tree).toMatchSnapshot();
+    });
 });

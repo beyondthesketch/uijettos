@@ -1,8 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UijettosToggleButton component Renders correctly and button is disabled when disabled prop is set to true 1`] = `
+<button
+  className="uijettos-toggle-button uijettos-toggle-button--disabled"
+  disabled={true}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
+
 exports[`UijettosToggleButton component Renders correctly when given a cssClassPrefix and state is false 1`] = `
 <button
   className="doodads-toggle-button"
+  disabled={false}
   onClick={[Function]}
 >
   <span
@@ -16,6 +31,7 @@ exports[`UijettosToggleButton component Renders correctly when given a cssClassP
 exports[`UijettosToggleButton component Renders correctly when given a cssClassPrefix and state is true 1`] = `
 <button
   className="doodads-toggle-button doodads-toggle-button--on"
+  disabled={false}
   onClick={[Function]}
 >
   <span
@@ -29,6 +45,7 @@ exports[`UijettosToggleButton component Renders correctly when given a cssClassP
 exports[`UijettosToggleButton component Renders correctly when given a labelOff 1`] = `
 <button
   className="uijettos-toggle-button"
+  disabled={false}
   onClick={[Function]}
 >
   <span
@@ -42,6 +59,7 @@ exports[`UijettosToggleButton component Renders correctly when given a labelOff 
 exports[`UijettosToggleButton component Renders correctly when given a labelOn 1`] = `
 <button
   className="uijettos-toggle-button uijettos-toggle-button--on"
+  disabled={false}
   onClick={[Function]}
 >
   <span
@@ -55,6 +73,7 @@ exports[`UijettosToggleButton component Renders correctly when given a labelOn 1
 exports[`UijettosToggleButton component Renders correctly when given initialState of false 1`] = `
 <button
   className="uijettos-toggle-button"
+  disabled={false}
   onClick={[Function]}
 >
   <span
@@ -68,6 +87,7 @@ exports[`UijettosToggleButton component Renders correctly when given initialStat
 exports[`UijettosToggleButton component Renders correctly when given initialState of true 1`] = `
 <button
   className="uijettos-toggle-button uijettos-toggle-button--on"
+  disabled={false}
   onClick={[Function]}
 >
   <span
@@ -81,6 +101,7 @@ exports[`UijettosToggleButton component Renders correctly when given initialStat
 exports[`UijettosToggleButton component Renders correctly when not supplied any props 1`] = `
 <button
   className="uijettos-toggle-button"
+  disabled={false}
   onClick={[Function]}
 >
   <span

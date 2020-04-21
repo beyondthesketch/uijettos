@@ -39,6 +39,7 @@ stories
             const labelOff = text('labelOff', 'Off');
             const cssClassPrefix = text('cssClassPrefix', 'uijettos');
             const initialState = boolean('initialState', false);
+            const disabled = boolean('disabled', false);
 
             return (
                 <UijettosToggleButton
@@ -46,6 +47,7 @@ stories
                     initialState={ initialState }
                     labelOn={labelOn}
                     labelOff={labelOff}
+                    disabled={ disabled }
                     whenClicked={ action('Button clicked') }
                 />
             );
