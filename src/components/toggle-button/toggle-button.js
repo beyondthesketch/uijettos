@@ -8,6 +8,7 @@ export default function UijettosToggleButton(
         labelOff = 'off',
         labelOn = 'on',
         initialState = false,
+        disabled = false,
         whenClicked,
     }
 ) {
@@ -15,7 +16,8 @@ export default function UijettosToggleButton(
     const [buttonState, setButtonState] = useState( initialState );
     return (
         <button
-            className={cssRootClass + (buttonState ? ` ${cssRootClass}--on` : '')}
+            className={cssRootClass + (buttonState ? ` ${cssRootClass}--on` : '') + (disabled ? ` ${cssRootClass}--disabled` : '')}
+            disabled={ disabled }
             onClick={ () => {
                 const newState = !buttonState;
                 whenClicked && whenClicked( newState );
