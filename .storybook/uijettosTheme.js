@@ -33,6 +33,7 @@ export default create(
         inputBorderRadius: 4,
 
         brandTitle: 'Beyond The Sketch Uijettos',
-        brandUrl: 'https://www.beyondthesketch.com'
+        brandUrl: 'https://www.beyondthesketch.com/developer',
+        brandImage: 'https://www.beyondthesketch.com/assets/icons/uijettos-icon.svg'
     }
 )

@@ -71,7 +71,9 @@ __labelOff__ : string > _optional_, _default : 'off'_ - The text for the button 
 
 __labelOn__ : string > _optional_, _default : 'on'_ - The text for the button when it's in the true state
 
-__initialState__ : boolean > _optional_, _default : 'on'_ - What state to start off on.
+__initialState__ : boolean > _optional_, _default : false_ - What state to start off on.
+
+__disabled__ : boolean > _optional_, _default : false_ - Whether the button is disabled
 
 __whenClicked__ : Function > _optional_ - A callback function to fire when the button is clicked. The callback accepts an argument that contains the state (after the click) of the button
 
@@ -185,6 +187,8 @@ __Elements__
 __Modifiers__
 
 `uijettos-toggle-button--on` - The block (`button`) when it is in a true state
+
+`uijettos-toggle-button--disabled` - The block (`button`) when the button is disabled - __TIP:__ this class is included for convenience and flexibility to suit your styling needs, however, we strongly advise adding styles for the disabled state using the CSS pseudo class `:disabled` instead of relying on this one.
 
 `uijettos-toggle-button__label--on` - The `span` with the text of the button when it is in a true state.
 

@@ -1,16 +1,69 @@
 @import './mixins';
+@import './variables';
 
-.uijettos {
-    &-toggle-button {
-        @include baseButtonStyles;
-        &--on {
+$block: "uijettos-toggle-button";
 
+.#{$block} {
+    // layout
+    position: relative;
+    box-sizing: border-box;
+    width: 3.4rem;
+    height: 2.1rem;
+    border: none;
+    padding: .4rem;
+    margin: .8rem 0 2.1rem;
+    text-align: right;
+
+    // content
+    cursor: pointer;
+    border-radius: 1.7rem;
+    background-color: #CDCDCD;
+    transition: background 250ms ease, text-align 250ms ease, opacity 250ms ease;
+
+    &::before {
+        // layout
+        content: '';
+        position: absolute;
+        display: block;
+        width: 2.1rem - .4rem;
+        height: 2.1rem - .4rem;
+        left: .2rem;
+        top: .2rem;
+
+        // content
+        background-color: #FFF;
+        border-radius: 100%;
+        transition: left 250ms ease, box-shadow 250ms ease;
+        box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__label {
+        // layout
+        font-size: .5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        // content
+        color: #FFF;
+    }
+
+    // mods
+    &.#{$block}--on {
+        // content
+        background-color: lighten($uijettosGreenDark, 5%);
+        text-align: left;
+
+        &::before {
+            // layout
+            left: calc(100% - (2.1rem - .2rem));
+
+            // content
+            box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, 0.2);
         }
-        &__label {
-
-            &--on {
-                color: darkgreen;
-            }
-        }
+    }
+    &:disabled,
+    &.#{$block}--disabled {
+        // content
+        opacity: 0.6;
     }
 }
