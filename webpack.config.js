@@ -1,17 +1,13 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-    mode: 'development',
-    entry: './demo.js',
+    entry: './index.js',
     output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: 'index.js'
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        inline: true,
-        compress: true,
-        port: 9000
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'index.js',
+        library: 'uijettos',
+        libraryTarget: 'commonjs2'
     },
     module: {
         rules: [
@@ -20,19 +16,10 @@ module.exports = {
                 exclude: [
                     path.resolve(__dirname, 'node_modules')
                 ],
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-react']
-                }
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            },
+                loader: 'babel-loader'
+            }
         ]
-    }
+    },
+    target: 'node',
+    externals: [nodeExternals()]
 };
