@@ -87,7 +87,7 @@ __options__ : Map - A map object with each item being a `string` to use for the 
 
 example:
 ```javascript
-<Uijettos
+<UijettosOptionsButton
     label="foo"
     options={
         new Map(
