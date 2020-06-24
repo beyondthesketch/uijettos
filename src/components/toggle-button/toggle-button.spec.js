@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, {act} from 'react-test-renderer';
 
 import UijettosToggleButton from './toggle-button';
 
@@ -50,6 +50,25 @@ describe('UijettosToggleButton component', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Calls whenClicked correctly when given initialState of true', () => {
+        const mockWhenClicked = jest.fn();
+
+        const tree = renderer
+            .create(
+                <UijettosToggleButton
+                    initialState={ true }
+                    whenClicked={ mockWhenClicked }
+                />
+            )
+            .toJSON();
+
+        // toggle off
+        act(
+            () => tree.props.onClick()
+        );
+        expect(mockWhenClicked).toHaveBeenCalledWith(false);
+    });
+
     test('Renders correctly when given initialState of false', () => {
         const tree = renderer
             .create(
@@ -61,6 +80,26 @@ describe('UijettosToggleButton component', () => {
 
 
         expect(tree).toMatchSnapshot();
+    });
+
+
+    test('Calls whenClicked correctly when given initialState of false', () => {
+        const mockWhenClicked = jest.fn();
+
+        const tree = renderer
+            .create(
+                <UijettosToggleButton
+                    initialState={ false }
+                    whenClicked={ mockWhenClicked }
+                />
+            )
+            .toJSON();
+
+        // toggle on
+        act(
+            () => tree.props.onClick()
+        );
+        expect(mockWhenClicked).toHaveBeenCalledWith(true);
     });
 
     test('Renders correctly when given a labelOff', () => {
