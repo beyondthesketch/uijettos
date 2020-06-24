@@ -71,7 +71,9 @@ __labelOff__ : string > _optional_, _default : 'off'_ - The text for the button 
 
 __labelOn__ : string > _optional_, _default : 'on'_ - The text for the button when it's in the true state
 
-__initialState__ : boolean > _optional_, _default : false_ - What state to start off on.
+__initialState__ : boolean > _optional_, _default : false_ - What state to start off on - use this to set the state when mounted when using like an 'uncontrolled' component (i.e. stateful).
+
+__state__ : boolean > _optional_, _default : undefined_ - Current on/off state of the button - use this to set the state when using like a 'controlled' component, such as when you are managing this value in app state (i.e. stateless).
 
 __disabled__ : boolean > _optional_, _default : false_ - Whether the button is disabled
 

@@ -111,3 +111,87 @@ exports[`UijettosToggleButton component Renders correctly when not supplied any 
   </span>
 </button>
 `;
+
+exports[`UijettosToggleButton component Stateless mode Correctly calls the whenClicked function and renders correctly after being clicked, when state prop is set to false 1`] = `
+<button
+  className="uijettos-toggle-button"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Stateless mode Correctly calls the whenClicked function and renders correctly after being clicked, when state prop is set to false 2`] = `
+<button
+  className="uijettos-toggle-button"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Stateless mode Correctly calls the whenClicked function and renders correctly after being clicked, when state prop is set to true 1`] = `
+<button
+  className="uijettos-toggle-button uijettos-toggle-button--on"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label uijettos-toggle-button__label--on"
+  >
+    on
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Stateless mode Correctly calls the whenClicked function and renders correctly after being clicked, when state prop is set to true 2`] = `
+<button
+  className="uijettos-toggle-button uijettos-toggle-button--on"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label uijettos-toggle-button__label--on"
+  >
+    on
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Stateless mode Renders correctly when state prop is set to false, ignoring the initialState 1`] = `
+<button
+  className="uijettos-toggle-button"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label"
+  >
+    off
+  </span>
+</button>
+`;
+
+exports[`UijettosToggleButton component Stateless mode Renders correctly when state prop is set to true, ignoring the initialState 1`] = `
+<button
+  className="uijettos-toggle-button uijettos-toggle-button--on"
+  disabled={false}
+  onClick={[Function]}
+>
+  <span
+    className="uijettos-toggle-button__label uijettos-toggle-button__label--on"
+  >
+    on
+  </span>
+</button>
+`;
