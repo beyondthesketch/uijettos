@@ -5,6 +5,9 @@ import { action } from '@storybook/addon-actions';
 import { withCssResources } from '@storybook/addon-cssresources';
 import UijettosSelectList from './select-list';
 
+import defaultStyle from './../../sass/select-list-defaults.scss';
+
+
 const stories = storiesOf('Select List', module);
 
 stories.addDecorator(withKnobs);
@@ -15,7 +18,7 @@ stories.addParameters(
         cssresources: [
             {
                 id: `Select List Default`,
-                code: `<style>.uijettos-select-list__options-list{padding:0;margin:0;list-style:none;display:flex;flex-direction:row;justify-content:flex-start;flex-wrap:wrap}.uijettos-select-list__option{box-sizing:border-box;padding:0.5rem;margin:0 0.5rem;border-radius:4px;box-shadow:0 0.2rem 0.5rem -0.3rem rgba(0,0,0,0.2),0 0 0 0 rgba(0,0,0,0.5);background:#CDCDCD;cursor:pointer;transition:background-color 500ms ease-out, box-shadow 100ms ease-in}.uijettos-select-list__option:hover{background-color:#ECECEC}.uijettos-select-list__option--selected{box-shadow:0 0.2rem 0.5rem 0rem rgba(0,0,0,0.2),0 0 0 0.2rem rgba(0,0,0,0.5);background:#ECECEC}</style>`,
+                code: `<style>${defaultStyle}</style>`,
                 picked: true
             },
             {
