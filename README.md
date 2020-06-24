@@ -108,7 +108,9 @@ __whenClicked__ : Function > _optional_ - A callback function to fire when the m
 
 ### props
 
-__initialSelected__ : string > _optional_, _defaults to the first option_ - The initially/currently selected option - see notes below
+__initialSelected__ : string > _optional_, _defaults to the first option_ - The initially selected option when the component mounts - use this to set the selected item when using like an 'uncontrolled' component (i.e. stateful)
+
+__selected__ : string > _optional_, _default : undefined_ - Current selected option - use this to set the selected item when using like a 'controlled' component,such as when you are managing this value in app state (i.e. stateless)
 
 __whenChanged__ : Function > _optional_ - A callback to fire when an option is selected. The callback accepts one argument that contains the value of the selected option.
 

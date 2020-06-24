@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { withCssResources } from '@storybook/addon-cssresources';
 import UijettosSelectList from './select-list';
@@ -38,9 +38,11 @@ stories
         () => {
             const prefix = text('cssClassPrefix', 'uijettos');
             const initialSelected = text('initialSelected', 'bar');
+            const selected = select('selected', [undefined, 'foo', 'bar', 'baz', 'bat'], undefined);
 
             return (<UijettosSelectList
                 initialSelected={ initialSelected }
+                selected={ selected }
                 cssClassPrefix={ prefix }
                 whenChanged={ action('Option selected') }
             >

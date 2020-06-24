@@ -77,4 +77,29 @@ describe('UijettosSelectList component', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    describe('Stateless mode', () => {
+        test('Renders correctly when selected prop is set to a value, ignoring the initialSelected', () => {
+            const tree = renderer
+                .create(
+                    <UijettosSelectList
+                        initialSelected="bar"
+                        selected="baz"
+                    >
+                        <li
+                            data-value="foo"
+                        >Foo</li>
+                        <li
+                            data-value="bar"
+                        >Bar</li>
+                        <li
+                            data-value="baz"
+                        >Baz</li>
+                    </UijettosSelectList>
+                )
+                .toJSON();
+
+            expect(tree).toMatchSnapshot();
+        })
+    })
 });

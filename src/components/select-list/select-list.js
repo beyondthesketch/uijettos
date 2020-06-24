@@ -5,13 +5,16 @@ import DEFAULT_CSS_CLASS_PREFIX from './../../constants/default-css-class-prefix
 export default function UijettosSelectList(
     {
         initialSelected,
+        selected,
         cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
         whenChanged,
         children
     }
 ) {
-    const [selected, setSelected] = useState( initialSelected || children && children.length && children[0].props['data-value'])
+    const [selectedItem, setSelectedItem] = useState( initialSelected || children && children.length && children[0].props['data-value'])
     const cssRootClass = `${cssClassPrefix}-select-list`;
+    
+    const usedSelected = (typeof selected !== 'undefined') ? selected : selectedItem;
 
     const handleSelect = (event) => {
         let node = event.target;
@@ -20,9 +23,9 @@ export default function UijettosSelectList(
         }
         if (node.dataset.value) {
             const val = node.dataset.value;
-            if (selected !== val) {
+            if (usedSelected !== val) {
                 whenChanged && whenChanged(val);
-                return setSelected( val );
+                return (typeof selected !== 'undefined') ? val : setSelectedItem( val );
             }
         }
     }
@@ -31,7 +34,7 @@ export default function UijettosSelectList(
         <div className={cssRootClass}>
             <ul
                 className={`${cssRootClass}__options-list`}
-                data-selected={selected}
+                data-selected={usedSelected}
                 onClick={handleSelect}
             >
                 {
@@ -39,7 +42,7 @@ export default function UijettosSelectList(
                         children,
                         child => React.cloneElement(child, {
                             className: `${cssRootClass}__option` +
-                            (child.props['data-value'] === selected
+                            (child.props['data-value'] === usedSelected
                                 ?
                                 ` ${cssRootClass}__option--selected`
                                 :
