@@ -121,3 +121,40 @@ exports[`UijettosSelectList component Renders correctly when supplied child <li>
   </ul>
 </div>
 `;
+
+exports[`UijettosSelectList component Stateless mode Renders correctly when selected prop is set to a value, ignoring the initialSelected 1`] = `
+<div
+  className="uijettos-select-list"
+>
+  <ul
+    className="uijettos-select-list__options-list"
+    data-selected="baz"
+    onClick={[Function]}
+  >
+    <li
+      className="uijettos-select-list__option"
+      data-value="foo"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Foo
+    </li>
+    <li
+      className="uijettos-select-list__option"
+      data-value="bar"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Bar
+    </li>
+    <li
+      className="uijettos-select-list__option uijettos-select-list__option--selected"
+      data-value="baz"
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+      Baz
+    </li>
+  </ul>
+</div>
+`;

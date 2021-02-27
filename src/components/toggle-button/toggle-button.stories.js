@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { withCssResources } from '@storybook/addon-cssresources';
 import UijettosToggleButton from './toggle-button';
@@ -40,11 +40,13 @@ stories
             const cssClassPrefix = text('cssClassPrefix', 'uijettos');
             const initialState = boolean('initialState', false);
             const disabled = boolean('disabled', false);
+            const state = select('state', [undefined, true, false], undefined);
 
             return (
                 <UijettosToggleButton
                     cssClassPrefix={ cssClassPrefix }
                     initialState={ initialState }
+                    state={ state }
                     labelOn={labelOn}
                     labelOff={labelOff}
                     disabled={ disabled }
