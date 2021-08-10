@@ -15,15 +15,24 @@ export default function UijettosOptionsButton(
     }
 ) {
     const cssRootClass = `${cssClassPrefix}-options-button`;
+    const [timeoutId, setTimeoutId] = useState(null);
     const [openState, setOpenState] = useState(open);
 
     return (
         <div
             className={cssRootClass}
+            onBlur={() => {
+                setTimeoutId(
+                    setTimeout(() => setOpenState(false))
+                );
+            }}
+            onFocus={() => {
+                clearTimeout(timeoutId);
+            }}
         >
             <button
                 className={`${cssRootClass}__main-button`}
-                onBlur={() => setOpenState(false)}
+                tabIndex="0"
                 onClick={() => {
                     whenClicked();
                     setOpenState(false);
@@ -33,13 +42,17 @@ export default function UijettosOptionsButton(
             </button>
             <button
                 className={`${cssRootClass}__options-trigger`}
+                tabIndex="0"
                 onClick={
                     event => {
                         event.stopPropagation();
+                        event.target.focus();
                         setOpenState(!openState);
                         whenOptionsTriggerClicked && whenOptionsTriggerClicked();
                     }
                 }
+                aria-haspopup="true"
+                aria-expanded="openState"
             ></button>
             {
                 openState && (<div
