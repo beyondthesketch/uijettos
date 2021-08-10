@@ -28,12 +28,12 @@ stories
         () => {
             const prefix = text('cssClassPrefix', 'uijettos');
             const label = text('label', 'foo');
-            const options = new Map(
+            const options = 
                     [
                         ['widgets', action('Options click')],
                         ['doodads', action('Options click')],
                     ]
-            );
+            ;
 
             return (<UijettosOptionsButton
                 cssClassPrefix={ prefix }
