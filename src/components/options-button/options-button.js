@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import  DEFAULT_CSS_CLASS_PREFIX from './../../constants/default-css-class-prefix';
 
-// NOTE: The `handleOutsideClick` implementation is necessary to handle Safari correctly (tested on v12)
-
 export default function UijettosOptionsButton(
     {
         cssClassPrefix = DEFAULT_CSS_CLASS_PREFIX,
@@ -52,7 +50,7 @@ export default function UijettosOptionsButton(
                     }
                 }
                 aria-haspopup="true"
-                aria-expanded="openState"
+                aria-expanded={openState}
             ></button>
             {
                 openState && (<div
