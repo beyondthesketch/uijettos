@@ -8,15 +8,20 @@ exports[`UijettosOptionsButton component Renders correctly when not supplied any
 >
   <button
     className="uijettos-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   />
   <button
+    aria-expanded={false}
+    aria-haspopup="true"
     className="uijettos-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
 </div>
 `;
 
-exports[`UijettosOptionsButton component Renders correctly when supplied a css prefix 1`] = `
+exports[`UijettosOptionsButton component Renders correctly when supplied a css prefix and closed 1`] = `
 <div
   className="doodads-options-button"
   onBlur={[Function]}
@@ -24,15 +29,20 @@ exports[`UijettosOptionsButton component Renders correctly when supplied a css p
 >
   <button
     className="doodads-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   />
   <button
+    aria-expanded={false}
+    aria-haspopup="true"
     className="doodads-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
 </div>
 `;
 
-exports[`UijettosOptionsButton component Renders correctly when supplied a css prefix 2`] = `
+exports[`UijettosOptionsButton component Renders correctly when supplied a css prefix and open 1`] = `
 <div
   className="doodads-options-button"
   onBlur={[Function]}
@@ -40,10 +50,15 @@ exports[`UijettosOptionsButton component Renders correctly when supplied a css p
 >
   <button
     className="doodads-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   />
   <button
+    aria-expanded={true}
+    aria-haspopup="true"
     className="doodads-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
   <div
     className="doodads-options-button__options-list doodads-options-button__options-list--open"
@@ -51,12 +66,14 @@ exports[`UijettosOptionsButton component Renders correctly when supplied a css p
     <button
       className="doodads-options-button__option"
       onClick={[Function]}
+      tabIndex="0"
     >
       widgets
     </button>
     <button
       className="doodads-options-button__option"
       onClick={[Function]}
+      tabIndex="0"
     >
       doodads
     </button>
@@ -72,17 +89,22 @@ exports[`UijettosOptionsButton component Renders correctly when supplied with a 
 >
   <button
     className="uijettos-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   >
     Foo Bar
   </button>
   <button
+    aria-expanded={false}
+    aria-haspopup="true"
     className="uijettos-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
 </div>
 `;
 
-exports[`UijettosOptionsButton component Renders correctly when supplied with options 1`] = `
+exports[`UijettosOptionsButton component Renders correctly when supplied with options and closed 1`] = `
 <div
   className="uijettos-options-button"
   onBlur={[Function]}
@@ -90,15 +112,20 @@ exports[`UijettosOptionsButton component Renders correctly when supplied with op
 >
   <button
     className="uijettos-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   />
   <button
+    aria-expanded={false}
+    aria-haspopup="true"
     className="uijettos-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
 </div>
 `;
 
-exports[`UijettosOptionsButton component Renders correctly when supplied with options 2`] = `
+exports[`UijettosOptionsButton component Renders correctly when supplied with options and open 1`] = `
 <div
   className="uijettos-options-button"
   onBlur={[Function]}
@@ -106,10 +133,15 @@ exports[`UijettosOptionsButton component Renders correctly when supplied with op
 >
   <button
     className="uijettos-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   />
   <button
+    aria-expanded={true}
+    aria-haspopup="true"
     className="uijettos-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
   <div
     className="uijettos-options-button__options-list uijettos-options-button__options-list--open"
@@ -117,12 +149,14 @@ exports[`UijettosOptionsButton component Renders correctly when supplied with op
     <button
       className="uijettos-options-button__option"
       onClick={[Function]}
+      tabIndex="0"
     >
       widgets
     </button>
     <button
       className="uijettos-options-button__option"
       onClick={[Function]}
+      tabIndex="0"
     >
       doodads
     </button>
@@ -138,10 +172,15 @@ exports[`UijettosOptionsButton component Renders options correctly when trigger 
 >
   <button
     className="uijettos-options-button__main-button"
+    onClick={[Function]}
+    tabIndex="0"
   />
   <button
+    aria-expanded={true}
+    aria-haspopup="true"
     className="uijettos-options-button__options-trigger"
     onClick={[Function]}
+    tabIndex="0"
   />
   <div
     className="uijettos-options-button__options-list uijettos-options-button__options-list--open"
@@ -149,12 +188,14 @@ exports[`UijettosOptionsButton component Renders options correctly when trigger 
     <button
       className="uijettos-options-button__option"
       onClick={[Function]}
+      tabIndex="0"
     >
       widgets
     </button>
     <button
       className="uijettos-options-button__option"
       onClick={[Function]}
+      tabIndex="0"
     >
       doodads
     </button>

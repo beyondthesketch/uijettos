@@ -15,30 +15,35 @@ describe('UijettosOptionsButton component', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Renders correctly when supplied a css prefix', () => {
+    test('Renders correctly when supplied a css prefix and closed', () => {
         const tree =
             renderer
                 .create(
                     <UijettosOptionsButton
                         cssClassPrefix="doodads"
-                        options={
-                            new Map(
-                                [
-                                    ['widgets', () => null],
-                                    ['doodads', () => null]
-                                ]
-                            )
-                        }
+                        options={[
+                            ['widgets', () => null],
+                            ['doodads', () => null]
+                        ]}
                     />
                 );
 
         expect(tree.toJSON()).toMatchSnapshot();
+    });
 
-        tree.root.instance.setState(
-            {
-                open: true
-            }
-        );
+    test('Renders correctly when supplied a css prefix and open', () => {
+        const tree =
+            renderer
+                .create(
+                    <UijettosOptionsButton
+                        cssClassPrefix="doodads"
+                        open={true}
+                        options={[
+                            ['widgets', () => null],
+                            ['doodads', () => null]
+                        ]}
+                    />
+                );
 
         expect(tree.toJSON()).toMatchSnapshot();
     });
@@ -56,48 +61,57 @@ describe('UijettosOptionsButton component', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Renders correctly when supplied with options', () => {
+    test('Renders correctly when supplied with options and closed', () => {
         const tree =
             renderer
                 .create(
                     <UijettosOptionsButton
                         options={
-                            new Map(
-                                [
-                                    ['widgets', () => null],
-                                    ['doodads', () => null]
-                                ]
-                            )
+                            [
+                                ['widgets', () => null],
+                                ['doodads', () => null]
+                            ]
                         }
                     />
                 )
 
         expect(tree.toJSON()).toMatchSnapshot();
+    });
 
-        tree.root.instance.setState(
-            {
-                open: true
-            }
-        );
+    test('Renders correctly when supplied with options and open', () => {
+        const tree =
+            renderer
+                .create(
+                    <UijettosOptionsButton
+                        open={true}
+                        options={
+                            [
+                                ['widgets', () => null],
+                                ['doodads', () => null]
+                            ]
+                        }
+                    />
+                )
 
         expect(tree.toJSON()).toMatchSnapshot();
     });
 
     test('Renders options correctly when trigger button is clicked', () => {
         const mockEvent = {
-            stopPropagation: jest.fn()
+            stopPropagation: jest.fn(),
+            target: {
+                focus: jest.fn(),
+            },
         };
         const tree =
             renderer
                 .create(
                     <UijettosOptionsButton
                         options={
-                            new Map(
-                                [
-                                    ['widgets', () => null],
-                                    ['doodads', () => null]
-                                ]
-                            )
+                            [
+                                ['widgets', () => null],
+                                ['doodads', () => null]
+                            ]
                         }
                     />
                 );
