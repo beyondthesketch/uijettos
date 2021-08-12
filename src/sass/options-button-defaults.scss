@@ -1,19 +1,57 @@
+@import "./variables";
 @import './mixins';
 
 .uijettos {
     &-options-button {
         display: inline-block;
-        margin: .5em auto;
         position: relative;
+        color: #FFF;
+        background: $uijettosGreenLight linear-gradient(113deg, $uijettosGreenLight 10%, $uijettosGreenDark);
+        border-radius: .8rem;
+        &:hover,
+        &:active,
+        &:focus {
+            background: scale-color($uijettosGreenDark, $lightness: 5%) linear-gradient(113deg, $uijettosGreenLight 2%, $uijettosGreenDark);
+            color: #FFF;
+        }
         &__main-button {
-            @include baseButtonStyles;
-            padding: .5em 2.75em .5em 1.75em;
+            box-sizing: border-box;
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 3.4rem auto;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            cursor: pointer;
+            height: 5.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-backdrop-filter: blur(10px) grayscale(1);
+            backdrop-filter: blur(10px) grayscale(1);
+            transition: border-color 350ms ease-out, background-color 350ms ease-out, color 350ms ease-out;
+            border: none;
+            padding: 0;
+            margin: 0;
+            padding: 0 4rem 0 2.75rem;
+            background: inherit;
+            color: inherit;
+            border-radius: inherit;
+            &:hover,
+            &:active,
+            &:focus {
+                background: inherit;
+                color: inherit;
+            }
+            &:focus {
+                @include focusRing;
+            }
         }
         &__options-trigger {
             position: absolute;
-            right: 0;
+            right: .8rem;
             appearance: none;
-            background: none;
             border: none;
             padding: 0;
             margin: 0;
@@ -21,52 +59,68 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            width: 30px;
-            height: 100%;
+            width: 2.5rem;
+            height: 2.5rem;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
             cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.3);
+
+            &:focus {
+                @include focusRing;
+            }
+            
             &::before {
                 content: "";
                 display: block;
-                width: 1px;
-                height: 25px;
                 position: absolute;
-                left: 0;
-                background-color: #CDCDCD;
+                top: 0;
+                right: 0;
+                width: 2.5rem;
+                background-color: #FFF;
             }
             &::after {
-                content: "•";
+                content: "";
+                width: 0;
+                width: 0;
+                transform: translate(0, 30%);
+                border: .8rem solid;
+                border-color: $uijettosGreenDark transparent transparent;
             }
         }
         &__options-list {
             padding: 0;
-            margin: .25em 0 0;
+            margin: .25rem 0 0;
             position: absolute;
             background: inherit;
             left: 0;
             top: 100%;
             background: #FFF;
             width: 100%;
-            border: 1px solid #ECECEC;
-            border-radius: 4px;
+            border: .1rem solid #ECECEC;
+            border-radius: .4rem;
             box-sizing: inherit;
             overflow: hidden;
             box-shadow: 0 0.2rem 0.5rem -0.3rem rgba(0,0,0,0.2);
             z-index: 2;
         }
         &__option {
+            font-size: 1.3rem;
                 -webkit-appearance: none;
             appearance: none;
             background: transparent;
             border: none;
-            padding: 0 1em;
+            padding: 0 1rem;
             margin: 0;
             display: block;
-            height: 40px;
+            height: 4rem;
             width: 100%;
             text-align: left;
-            border-bottom: 1px solid #f2f2f2;
+            border-bottom: .1rem solid #f2f2f2;
             cursor: pointer;
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 background-color: #f2f2f2;
             }
             &:last-child {

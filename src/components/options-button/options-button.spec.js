@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 
 import UijettosOptionsButton from './options-button';
 
@@ -115,17 +115,20 @@ describe('UijettosOptionsButton component', () => {
                         }
                     />
                 );
-
-        tree.root
-            .findByProps(
-                {
-                    className: 'uijettos-options-button__options-trigger'
-                }
-            )
-            .props
-            .onClick(
-                mockEvent
-            );
+        act(
+            () => {
+                tree.root
+                    .findByProps(
+                        {
+                            className: 'uijettos-options-button__options-trigger'
+                        }
+                    )
+                    .props
+                    .onClick(
+                        mockEvent
+                    );
+            }
+        );
 
         expect(tree.toJSON()).toMatchSnapshot();
     });
