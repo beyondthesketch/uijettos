@@ -24,7 +24,6 @@ exports[`UijettosSelectList component Renders correctly when supplied a cssClass
       className="doodads-select-list__option doodads-select-list__option--selected"
       data-value="foo"
       onKeyPress={[Function]}
-      tabIndex={0}
     >
       Foo
     </li>
@@ -61,7 +60,6 @@ exports[`UijettosSelectList component Renders correctly when supplied child <li>
       className="uijettos-select-list__option uijettos-select-list__option--selected"
       data-value="foo"
       onKeyPress={[Function]}
-      tabIndex={0}
     >
       Foo
     </li>
@@ -106,7 +104,6 @@ exports[`UijettosSelectList component Renders correctly when supplied child <li>
       className="uijettos-select-list__option uijettos-select-list__option--selected"
       data-value="bar"
       onKeyPress={[Function]}
-      tabIndex={0}
     >
       Bar
     </li>
@@ -151,7 +148,6 @@ exports[`UijettosSelectList component Stateless mode Renders correctly when sele
       className="uijettos-select-list__option uijettos-select-list__option--selected"
       data-value="baz"
       onKeyPress={[Function]}
-      tabIndex={0}
     >
       Baz
     </li>

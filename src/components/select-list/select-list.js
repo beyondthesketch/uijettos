@@ -48,7 +48,7 @@ export default function UijettosSelectList(
                                 :
                                 ''
                             ),
-                            tabIndex: 0,
+                            tabIndex: child.props['data-value'] === usedSelected ? undefined : 0,
                             onKeyPress: (event) => {
                                 event.preventDefault();
                                 event.target.click();
